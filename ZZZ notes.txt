@@ -32,3 +32,28 @@ days - as evenings 6-11pm
 weekend as 9am to 12pm
 DB as mongo could just be 2 dbs. Users and all the other stuff just added into fields as they are generated.
 What are the fields for the big database???
+
+15 Nov thoughts
+Need to link-up calandar to database, same database as Mongodb is fine, maybe different collection, but would still need to link users to calandar, so same collection?
+Mongodb needs to show calandar availability, write data etc. i.e. the CRUD
+These fields seem to be mon, tue, wed, thur, fri, sat1, sat2, sun1, sun2, certainly which pertain to the user and is more frontend / UX oriented i.e. JQuery.
+But probably need specific field for each slot of time. (interestingly, while I'd stick with Mongodb, this does feel more mySQL based. Senario could call for using Mongo & mySQL)
+
+will need to check that slot is not already taken.
+fields: 
+mon6, mon7, mon8, mon9, mon10, mon11,
+tue6, tue7, tue8, tue9, tue10, tue11,
+wed6, wed7, wed8, wed9, wed10, wed11,
+thur6, thur7, thur8, thur9, thur10, thur11,
+fri6, fri7, fri8, fri9, fri10, fri11,
+
+sat9morn, sat11morn, sat1aft, sat3aft, sat5aft, sat7aft, sat9aft, sat11aft
+sun9morn, sun11morn, sun1aft, sun3aft, sun5aft, sun7aft, sun9aft, sun11aft
+
+above should be some variable, even a function or 2 as a variable
+i.e. find (mongo command)
+
+finding and allowing
+mongo { slot: /^mon/ }
+
+

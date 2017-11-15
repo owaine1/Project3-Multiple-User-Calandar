@@ -10,7 +10,7 @@ function spotify_passport(User, passport, configAuth) {
             callbackURL: configAuth.spotifyAuth.callbackURL,
             passReqToCallback: true // pass in req from our route (checks if user logged in or not)
         },
-
+        
         // fb sends back the token and profile
         function (req, token, refreshToken, profile, done) {
 

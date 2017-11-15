@@ -15,7 +15,6 @@ module.exports = function (app, passport) {
         console.log('getting index.ejs');
         res.render('index.ejs'); // loads index.ejs
     });
-
     // profile
     app.get('/calandarandprofile', isLoggedIn, function (req, res) {
         console.log('getting calandarandprofile');
@@ -23,7 +22,6 @@ module.exports = function (app, passport) {
             user: req.user // get the user out of session and pass to template
         });
     });
-
     app.get('/logout', function (req, res) {
         req.logout();
         res.redirect('/');
@@ -31,11 +29,9 @@ module.exports = function (app, passport) {
 };
 
 function isLoggedIn(req, res, next) {
-
     // route middleware. User logged in? If user authenticated in session, carry on 
     if (req.isAuthenticated())
         return next();
-
     //  user NOT authenticated, redirect
     res.redirect('/');
 }

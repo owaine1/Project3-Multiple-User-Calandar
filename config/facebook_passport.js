@@ -1,7 +1,6 @@
 const FacebookStrategy = require('passport-facebook').Strategy;
 
 function facebook_passport(User, passport, configAuth) {
-
     passport.use(new FacebookStrategy({
             // pull app id & secret from our auth.js
             clientID: configAuth.facebookAuth.clientID,
@@ -37,12 +36,13 @@ function facebook_passport(User, passport, configAuth) {
                                 });
                             }
                             return done(null, user); // user found, return that user
+
                         } else {
                             // if no user found with that facebook id, create them
                             var newUser = new User();
                             // set all of the facebook information in our user model
                             newUser.facebook.id = profile.id; // set the users' FB id     
-                            newUser.facebook.token = token; // we will save the token that FB provides to user                    
+                            newUser.facebook.token = token; // we will save the token that FB provides to user
                             newUser.facebook.name = profile.name.givenName;
                             // newUser.facebook.email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
                             // save our user to the database
