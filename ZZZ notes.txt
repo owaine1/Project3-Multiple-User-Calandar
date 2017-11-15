@@ -1,0 +1,34 @@
+This app is Project 3.
+Current thoughts are a music style app.  Likely with a number of users (small amount) that users can login to.
+Mandatory
+Number of users login.
+Using Node: Express & Passport
+IDEAS
+Maybe a simple 'to do' list.
+share and exchange ideas and update and delete comments(?).
+Maybe a found or scouting music / ideas.
+A small voting system?
+Sounds a bit like a mini Facebook??? NOOOOOO...
+Maybe timed in a way that has deadlines, if user doen't interract, then their vote is not used or passed to someone-else.
+Incentivisation
+I'm thinking on 'living in a shared house' rights. Maybe could even be for kids / siblings. Could even be in confinement, e.g. prison, old peoples homes, etc., etc..
+Locigal thoughts are what music can be played next in a shared space environment. Maybe alocate slots. Think even no music. So booking slots of time. Exactly like a calandar? So calandar rather than a todo list???
+Then have 2 or 3 databases?
+1 users
+    bill
+    bob
+    betty
+    brian
+    barbara
+1 playlists / songs
+1 calandar with comments???
+Comments could include a group proxy for a player/user not to play THAT most annoying song, or limit to one play.
+Would be great if it could be hooked up to Spotify as to stop a person from playing one type of song or genre or artist, though beyond scope of this project and quite complex. This then also has the addition of reducing priviliges/rights.
+Extra feature, again beyond scope is to add stats of most plays/least plays.
+Forfiture of right to play for some other rights, e.g. this privilige could be used as currency.
+Main view is the calandar. 
+So a table
+days - as evenings 6-11pm
+weekend as 9am to 12pm
+DB as mongo could just be 2 dbs. Users and all the other stuff just added into fields as they are generated.
+What are the fields for the big database???

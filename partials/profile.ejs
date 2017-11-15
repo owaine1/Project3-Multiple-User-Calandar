@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Node Authentication</title>
+    <% include ../partials/head %>
+</head>
+
+<body>
+    <div class="container">
+        <div class="page-header text-center">
+            <h1>
+                <span class="fa fa-anchor"></span> Profile Page</h1>
+            <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+        </div>
+        <div class="row">
+            <!-- Local  -->
+            <div class="col-sm-6">
+                <div class="well">
+                    <h3>
+                        <span class="fa fa-user"></span> Local</h3>
+                    <% if (user.local.email) { %>
+                        <p>id:
+                            <%= user._id %>
+                        </p>
+                        <p>email:
+                            <%= user.local.email %>
+                        </p>
+                        <p>password:
+                            <%= user.local.password %>
+                        </p>
+                        <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                        <% } else { %>
+                            <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                            <% } %>
+                </div>
+            </div>
+            <!-- Facebook -->
+            <div class="col-sm-6">
+                <div class="well">
+                    <h3 class="text-primary">
+                        <span class="fa fa-facebook"></span> Facebook</h3>
+                    <% if (user.facebook.token) { %>
+                        <p>id:
+                            <%= user.facebook.id %>
+                        </p>
+                        <p>token:
+                            <%= user.facebook.token %>
+                        </p>
+                        <p>email:
+                            <%= user.facebook.email %>
+                        </p>
+                        <p>name:
+                            <%= user.facebook.name %>
+                        </p>
+                        <a href="/unlink/facebook" class="btn btn-primary">Unlink</a>
+                        <% } else { %>
+                            <a href="/connect/facebook" class="btn btn-primary">Connect Facebook</a>
+                            <% } %>
+                </div>
+            </div>
+            <!-- Spotify -->
+            <div class="col-sm-6">
+                <div class="well">
+                    <h3 class="text-info">
+                        <span class="fa fa-spotify"></span> Spotify</h3>
+                    <% if (user.spotify.token) { %>
+                        <p>id:
+                            <%= user.spotify.id %>
+                        </p>
+                        <p>token:
+                            <%= user.spotify.token %>
+                        </p>
+                        <p>username:
+                            <%= user.spotify.username %>
+                        </p>
+                        <p>displayName:
+                            <%= user.spotify.displayName %>
+                        </p>
+                        <a href="/unlink/spotify" class="btn btn-info">Unlink</a>
+                        <% } else { %>
+                            <a href="/connect/spotify" class="btn btn-info">Connect Spotify</a>
+                            <% } %>
+                </div>
+            </div>
+            <!-- Windows -->
+            <div class="col-sm-6">
+                <div class="well">
+                    <h3 class="text-danger">
+                        <span class="fa fa-windows"></span> Windows</h3>
+                    <p>id:
+                        <%= user.windows.id %>
+                    </p>
+                    <p>token:
+                        <%= user.windows.token %>
+                    </p>
+                    <% if (user.windows.token) { %>
+                        <p>email:
+                            <%= user.windows.email %>
+                        </p>
+                        <p>name:
+                            <%= user.windows.name %>
+                        </p>
+                        <a href="/unlink/windows" class="btn btn-danger">Unlink</a>
+                        <% } else { %>
+                            <a href="/connect/windows" class="btn btn-danger">Connect Google</a>
+                            <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

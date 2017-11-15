@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Node Authentication</title>
+    <% include ../partials/head %>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h1>
+                <span class="fa fa-sign-in"></span> Login</h1>
+            <!-- shows messages that come back with authentication -->
+            <% include ../partials/alert %>
+                <!-- Login form-->
+                <form action="/login" method="post">
+                    <% include ../partials/login_form %>
+                        <button type="submit" class="btn btn-warning btn-lg">Login</button>
+                </form>
+                <hr>
+                <p>Don't have an account?
+                    <a href="/signup">Signup</a>
+                </p>
+                <p>Or go
+                    <a href="/">home</a>.</p>
+        </div>
+    </div>
+</body>
+
+</html>
