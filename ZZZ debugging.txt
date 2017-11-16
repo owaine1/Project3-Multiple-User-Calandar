@@ -1,14 +1,4 @@
-<head>
-    <% include ../partials/head %>
-        <title>Calandar</title>
-</head>
-
-<body>
-    <!-- question for Peter: if only way to have method="post" is via <form></form>
-        so should form be nested inside <td></td> -->
-
-    <h1>Communal Music app Evening / Weekend playlist calandar</h1>
-    <!--  
+<!-- 
     <table class="table table-bordered">
         <tr id="row0">
             <th class="hour"></th>
@@ -39,7 +29,7 @@
             <td class="wed h7wday use1 use2 use3 use4 use5"></td>
             <td class="thur h7wday use1 use2 use3 use4 use5"></td>
             <td class="fri h7wday use1 use2 use3 use4 use5"></td>
-            <th class="hour">11–1</th>
+            <th class="hour ">11–1</th>
             <td class="sat h11mornwday free"></td>
             <td class="sun h7mornwday free"></td>
         </tr>
@@ -111,17 +101,4 @@
             <td class="sun h11evewend use1 use2 use3 use4 use5"></td>
         </tr>
     </table>
--->
-
-    <p>
-        Wonder if some radio buttons
-        <br> Did think about "not play that annoying tune"
-        <br> Or
-        <br> Permitted to play punk or Richard Clayderman etc., etc..
-        <br> Plus comments field is lacking. Would the comments then go to the database aswell, maybe, even as a voting type
-        system to communally vote against a user to play certain types of music and also the opposite to award users privilege???
-        <br>need to explain max nos of selections on page. i.e. 6 hours for weekdays (2 hours max a day),2 hours per weekend
-        day, weekends 9–3 freetime, no bookings: 1st come, 1st served otherwise flash message from Jquery
-    </p>
-    <% include ../partials/profile %>
-</body>
+     -->

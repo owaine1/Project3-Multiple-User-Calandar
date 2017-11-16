@@ -16,12 +16,12 @@ module.exports = function (app, passport) {
         res.render('index.ejs'); // loads index.ejs
     });
     // profile
-    app.get('/calandarandprofile', isLoggedIn, function (req, res) {
-        console.log('getting calandarandprofile');
-        res.render('calandarandprofile.ejs', {
-            user: req.user // get the user out of session and pass to template
-        });
-    });
+    // app.get('/calandarandprofile', isLoggedIn, function (req, res) {
+    //     console.log('getting calandarandprofile');
+    //     res.render('calandarandprofile.ejs', {
+    //         user: req.user // get the user out of session and pass to template
+    //     });
+    // });
     app.get('/logout', function (req, res) {
         req.logout();
         res.redirect('/');

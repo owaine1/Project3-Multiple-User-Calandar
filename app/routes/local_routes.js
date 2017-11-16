@@ -10,23 +10,11 @@ function local_routes(app, passport) {
 
     // process the login form
     app.post('/login', passport.authenticate('local-login', {
+
         successRedirect: '/calandarandprofile', // redirect to the secure calandarandprofile section
-        failureRedirect: '/', // redirect back to the signup page if there is an error
+        failureRedirect: '/login', // redirect back to the signup page if there is an error
         failureFlash: true // allow flash messages
     }));
-    // AUTHORIZE (ALREADY LOGGEDIN / CONNECTING OTHER SOCIAL ACCOUNT)
-    // local
-    app.get('/connect/local', function (req, res) {
-        res.render('connect_local.ejs', {
-            message: req.flash('loginMessage')
-        });
-    });
-    app.post('/connect/local', passport.authenticate('local-signup', {
-        successRedirect: '/calandarandprofile', // redirect to secure calandarandprofile
-        failureRedirect: '/connect/local', // redirect back to signup page if an error
-        failureFlash: true // allow flashup messages
-    }));
-
     //signup form
     app.get('/signup', function (req, res) {
         console.log('doing signup');
@@ -42,6 +30,21 @@ function local_routes(app, passport) {
         failureRedirect: '/signup', // redirect back to signup page if error
         failureFlash: true // allow flash messages
     }));
+
+    // AUTHORIZE (ALREADY LOGGEDIN / CONNECTING OTHER SOCIAL ACCOUNT)
+    // local
+    app.get('/connect/local', function (req, res) {
+        res.render('connect_local.ejs', {
+            message: req.flash('loginMessage')
+        });
+    });
+    app.post('/connect/local', passport.authenticate('local-signup', {
+        successRedirect: '/calandarandprofile', // redirect to secure calandarandprofile
+        failureRedirect: '/connect/local', // redirect back to signup page if an error
+        failureFlash: true // allow flashup messages
+    }));
+
+
     // unlink
     app.get('/unlink/local', function (req, res) {
         var user = req.user;
@@ -51,6 +54,11 @@ function local_routes(app, passport) {
             res.redirect('/calandarandprofile');
         });
     });
+
+
 }
 
 module.exports = local_routes;
+
+// app.get('/test', function (req, res) {
+//     res.render('test') })
