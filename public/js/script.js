@@ -1,5 +1,7 @@
 $(document).ready(function () {
-
+    $("p").click(function () {
+        $(this).hide();
+    });
 });
 // Intention is to select different parts of the calandar
 // light grey on hover (could be done in css, bootstrap or jquery)

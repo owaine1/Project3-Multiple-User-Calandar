@@ -62,10 +62,10 @@ function local_passport(User, passport) {
 
                 if (!user) // if no user found, return the message
                     return done(null, false, req.flash('loginMessage', 'No user found.')); // req.flash is to set flashdata (data shown once and the n destroyed) using connect-flash
-
+                    
                 // if user found but password is wrong
                 if (!user.validPassword(password))
-                    return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.')); // create loginMessage & save to session as flashdata
+                    return done(null, false, req.flash('loginMessage', 'Wrong password. Try again.')); // create loginMessage & save to session as flashdata
                 return done(null, user); // return successful user
             });
         }));

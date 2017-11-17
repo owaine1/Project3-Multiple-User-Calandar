@@ -56,4 +56,4 @@ i.e. find (mongo command)
 finding and allowing
 mongo { slot: /^mon/ }
 
-
+jquery as an include file...??? Doesn't work as is.

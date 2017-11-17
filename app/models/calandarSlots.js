@@ -1,5 +1,5 @@
-// var mongoose = require('mongoose'); 
-// var SchemaCalandarSlots = mongoose.Schema;
+// const mongoose = require('mongoose'); 
+// const SchemaCalandarSlots = mongoose.Schema;
 // // Assumed example below is right, added array, as think this is the rightway
 // // i.e. search for day, then search for slot.
 // var calandarSlots = mongoose.Schema({ //was mongoose.Schema
@@ -13,7 +13,6 @@
 //         {mon10: Boolean,person: Int},
 //         {mon11: Boolean, person: Int},
 //         ],
-    
 //     tue: 
 //         [
 //         {tue6: Boolean}, {person: Int},
@@ -73,4 +72,4 @@
 //         {sunaft11: Boolean, person: Int}
 //     ]
 // });
-// module.exports = mongoose.model('User', calandar_slots); // create the model for calandar slots
+// module.exports = mongoose.model('User', calandar_slots, users); // create the model for calandar slots

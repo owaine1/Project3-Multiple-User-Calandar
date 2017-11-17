@@ -10,7 +10,6 @@
             passport.authenticate('facebook', {
                 successRedirect: '/calandarandprofile',
                 failureRedirect: '/'
-
             }));
 
         //send  facebook  do authentication
