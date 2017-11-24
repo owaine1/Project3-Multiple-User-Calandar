@@ -6,7 +6,6 @@
 <body>
     <!-- question for Peter: if only way to have method="post" is via <form></form>
         so should form be nested inside <td></td> -->
-
     <h1>Communal Music app Evening / Weekend booking</h1>
     <table class="table table-bordered">
         <tr id="row0">
@@ -22,7 +21,9 @@
         </tr>
         <tr id="row1">
             <th class="hour">6–7</th>
-            <td class="mon mon6 use1 use2 use3 use4 use5"><input type="password" class="form-control" name="password" value="owain"></td>
+            <td class="mon mon6 use1 use2 use3 use4 use5">
+                <input type="radio" class="form-control" name="password" value="owain">
+            </td>
             <td class="tue tue6 use1 use2 use3 use4 use5"></td>
             <td class="wed wed6 use1 use2 use3 use4 use5"></td>
             <td class="thur thur6 use1 use2 use3 use4 use5"></td>
@@ -111,7 +112,7 @@
         </tr>
     </table>
     <p>
-        Wonder if some radio buttons
+        Wonder if some radio buttons as test, but are too old to use frontend
         <br> Did think about "not play that annoying tune"
         <br> Or
         <br> Permitted to play punk or Richard Clayderman etc., etc..
@@ -121,5 +122,4 @@
         day, weekends 9–3 freetime, no bookings: 1st come, 1st served otherwise flash message from Jquery
         <% include ../partials/profile %>
     </p>
-
 </body>

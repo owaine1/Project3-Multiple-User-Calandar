@@ -1,18 +1,17 @@
 This app is Project 3.
+All Modified 17th Nov
 Current thoughts are a music style app.  Likely with a number of users (small amount) that users can login to.
 Mandatory
 Number of users login.
 Using Node: Express & Passport
 IDEAS
-Maybe a simple 'to do' list.
 share and exchange ideas and update and delete comments(?).
-Maybe a found or scouting music / ideas.
 A small voting system?
-Sounds a bit like a mini Facebook??? NOOOOOO...
 Maybe timed in a way that has deadlines, if user doen't interract, then their vote is not used or passed to someone-else.
+Sounds a bit like a mini Facebook??? NOOOOOO...
 Incentivisation
 I'm thinking on 'living in a shared house' rights. Maybe could even be for kids / siblings. Could even be in confinement, e.g. prison, old peoples homes, etc., etc..
-Locigal thoughts are what music can be played next in a shared space environment. Maybe alocate slots. Think even no music. So booking slots of time. Exactly like a calandar? So calandar rather than a todo list???
+Logical thoughts are what music can be played next in a shared space environment. Maybe alocate slots. Think even no music. So booking slots of time. Exactly like a calandar.
 Then have 2 or 3 databases?
 1 users
     bill
@@ -27,33 +26,42 @@ Would be great if it could be hooked up to Spotify as to stop a person from play
 Extra feature, again beyond scope is to add stats of most plays/least plays.
 Forfiture of right to play for some other rights, e.g. this privilige could be used as currency.
 Main view is the calandar. 
-So a table
+So a table / calandar weekly view
 days - as evenings 6-11pm
 weekend as 9am to 12pm
-DB as mongo could just be 2 dbs. Users and all the other stuff just added into fields as they are generated.
-What are the fields for the big database???
+DB as mongo could just be 2 collections. Users and all the other stuff just added into fields as they are generated.
+What are the fields for the big database?
 
 15 Nov thoughts
-Need to link-up calandar to database, same database as Mongodb is fine, maybe different collection, but would still need to link users to calandar, so same collection?
+Need to link-up calandar to database, same database as Mongodb is fine: different collection, but would still need to link users to calandar.
 Mongodb needs to show calandar availability, write data etc. i.e. the CRUD
-These fields seem to be mon, tue, wed, thur, fri, sat1, sat2, sun1, sun2, certainly which pertain to the user and is more frontend / UX oriented i.e. JQuery.
+These fields seem to be mon, tue, wed, thur, fri, sat1, sat2, sun1, sun2, certainly which pertain to the user and is more frontend / UX oriented i.e. JQuery, think can use stuff in node/express.
 But probably need specific field for each slot of time. (interestingly, while I'd stick with Mongodb, this does feel more mySQL based. Senario could call for using Mongo & mySQL)
 
 will need to check that slot is not already taken.
 fields: 
+
 mon6, mon7, mon8, mon9, mon10, mon11,
 tue6, tue7, tue8, tue9, tue10, tue11,
 wed6, wed7, wed8, wed9, wed10, wed11,
 thur6, thur7, thur8, thur9, thur10, thur11,
 fri6, fri7, fri8, fri9, fri10, fri11,
-
-sat9morn, sat11morn, sat1aft, sat3aft, sat5aft, sat7aft, sat9aft, sat11aft
-sun9morn, sun11morn, sun1aft, sun3aft, sun5aft, sun7aft, sun9aft, sun11aft
+satmorn9, satmorn11, sataft1, sataft3, sataft5, sataft7, sataft9, sataft11
+sunmorn9, sunmorn11, sunaft1, sunaft3, sunaft5, sunaft7, sunaft9, sunaft11
 
 above should be some variable, even a function or 2 as a variable
 i.e. find (mongo command)
+find all instances of slots of the week by user.
+
 
 finding and allowing
 mongo { slot: /^mon/ }
 
 jquery as an include file...??? Doesn't work as is.
+
+Fri 18 thoughts
+Models
+Database really you want a users' selection of multiple slots stored as one document within the database.
+Therefore seems, a collection of each users selection for the week; that each users selection is a document. Therefore another model. Maybe called userSlots.js?
+Then a collection that is more static, (the current schema is calandarSlots.js) where the fields are boolean and they're on/off, true/false....
+Think need a communication diagram, draw routes, even if they are completely wrong.
